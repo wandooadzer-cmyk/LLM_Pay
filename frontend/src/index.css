@@ -1,0 +1,99 @@
+:root {
+  /* Color Palette - HSL Tailored */
+  --primary-h: 238;
+  --primary-s: 83%;
+  --primary-l: 66%;
+  --primary: hsl(var(--primary-h), var(--primary-s), var(--primary-l));
+  --primary-glow: hsla(var(--primary-h), var(--primary-s), var(--primary-l), 0.15);
+  
+  --bg-h: 220;
+  --bg-s: 20%;
+  --bg-l: 4%;
+  --bg: hsl(var(--bg-h), var(--bg-s), var(--bg-l));
+  
+  --card-bg: hsla(var(--bg-h), var(--bg-s), 10%, 0.4);
+  --card-border: hsla(var(--bg-h), var(--bg-s), 20%, 0.3);
+  
+  --text-main: hsl(var(--bg-h), 10%, 95%);
+  --text-muted: hsl(var(--bg-h), 10%, 65%);
+  
+  --success: hsl(142, 71%, 45%);
+  --error: hsl(0, 84%, 60%);
+  
+  --font-family: 'Outfit', 'Inter', sans-serif;
+  --border-radius: 16px;
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text-main);
+  font-family: var(--font-family);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Glassmorphism Classes */
+.glass-effect {
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--card-border);
+  border-radius: var(--border-radius);
+}
+
+.glass-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--card-border);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+}
+
+.glass-card:hover {
+  border-color: hsla(var(--primary-h), var(--primary-s), var(--primary-l), 0.4);
+  box-shadow: 0 8px 32px var(--primary-glow);
+  transform: translateY(-2px);
+}
+
+/* Global Typography */
+h1, h2, h3 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 1.75rem; }
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+a:hover {
+  filter: brightness(1.2);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--card-border);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}

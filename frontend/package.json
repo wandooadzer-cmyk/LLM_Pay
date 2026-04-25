@@ -3,8 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "vite",
-    "build": "vite build"
+    "start": "node init && vite",
+    "dev": "node init && vite",
+    "build": "node init && vite build"
   },
   "dependencies": {
     "react": "^18.0.0",
@@ -12,6 +13,6 @@
   },
   "devDependencies": {
     "vite": "^5.0.0",
-    "@vitejs/plugin-react": "^3.0.0"
+    "@vitejs/plugin-react": "^4.0.0"
   }
 }
